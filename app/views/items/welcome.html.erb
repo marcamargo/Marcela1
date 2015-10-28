@@ -1,0 +1,24 @@
+<p id="welcome"><%= @notice %></p>
+
+<%= link_to('register', new_user_session_path)  %>
+
+<table>
+  <thead>
+    <tr>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= link_to item.title + " ( " + number_to_currency(item.price) + ")" , item %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>
